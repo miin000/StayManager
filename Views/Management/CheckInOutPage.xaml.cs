@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace StayManager.Views.Staff
+namespace StayManager.Views.Admin
 {
     /// <summary>
     /// Interaction logic for CheckInOutPage.xaml
