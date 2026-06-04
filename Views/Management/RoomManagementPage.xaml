@@ -1,12 +1,20 @@
-﻿<Window x:Class="StayManager.Views.Admin.RoomManagementPage"
+﻿<Window x:Class="StayManager.Views.Management.RoomManagementPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:StayManager.Views.Admin"
-        mc:Ignorable="d"
-        Title="RoomManagementPage" Height="450" Width="800">
+        xmlns:local="clr-namespace:StayManager.Views.Shared"
+        Title="Quản lý phòng" Height="900" Width="1200">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <local:Sidebar Grid.Column="0"/>
+
+        <StackPanel Grid.Column="1" Margin="20">
+            <TextBlock Text="Quản lý Tình trạng Phòng" FontSize="24" FontWeight="Bold" Margin="10"/>
+            <ItemsControl x:Name="icRooms"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace StayManager.Views.Management
 {
     /// <summary>
-    /// Interaction logic for Dashboard.xaml
+    /// Interaction logic for AnalyticsPage.xaml
     /// </summary>
-    public partial class Dashboard : Window
+    public partial class AnalyticsPage : Window
     {
-        public Dashboard()
+        public AnalyticsPage()
         {
             InitializeComponent();
+        }
+
+        private void Sidebar_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace StayManager.Views.Management
+namespace StayManager.Views.Customer
 {
     /// <summary>
-    /// Interaction logic for Dashboard.xaml
+    /// Interaction logic for BookingPage.xaml
     /// </summary>
-    public partial class Dashboard : Window
+    public partial class BookingPage : Window
     {
-        public Dashboard()
+        public BookingPage()
         {
             InitializeComponent();
         }

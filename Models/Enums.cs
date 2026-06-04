@@ -39,6 +39,13 @@ namespace StayManager.Models
         Cancelled = 3       // Đã hủy
     }
 
+    public enum PaymentMethod
+    {
+        None = 0,
+        Cash = 1,
+        BankTransfer = 2
+    }
+
     public enum InventoryStatus
     {
         Available = 1,      // Có sẵn

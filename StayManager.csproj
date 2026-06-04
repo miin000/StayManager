@@ -57,28 +57,42 @@
     </ApplicationDefinition>
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\DbInitializer.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\InventoryImport.cs" />
+    <Compile Include="Models\InvoiceItem.cs" />
+    <Compile Include="Models\StatisticModels.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\InventoryService.cs" />
     <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="Services\ReservationService.cs" />
     <Compile Include="Services\RoomService.cs" />
-    <Compile Include="Views\Admin\CustomerManagementPage.xaml.cs">
+    <Compile Include="Services\StatisticService.cs" />
+    <Compile Include="Views\Customer\BookingPage.xaml.cs">
+      <DependentUpon>BookingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Management\AnalyticsPage.xaml.cs">
+      <DependentUpon>AnalyticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Management\CheckInOutPage.xaml.cs">
+      <DependentUpon>CheckInOutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Management\CustomerManagementPage.xaml.cs">
       <DependentUpon>CustomerManagementPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Dashboard.xaml.cs">
+    <Compile Include="Views\Management\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\EmployeeManagementPage.xaml.cs">
+    <Compile Include="Views\Management\EmployeeManagementPage.xaml.cs">
       <DependentUpon>EmployeeManagementPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\InventoryManagementPage.xaml.cs">
+    <Compile Include="Views\Management\InventoryManagementPage.xaml.cs">
       <DependentUpon>InventoryManagementPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\InvoiceManagementPage.xaml.cs">
+    <Compile Include="Views\Management\InvoiceManagementPage.xaml.cs">
       <DependentUpon>InvoiceManagementPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\RoomManagementPage.xaml.cs">
+    <Compile Include="Views\Management\RoomManagementPage.xaml.cs">
       <DependentUpon>RoomManagementPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Customer\HomePage.xaml.cs">
@@ -96,26 +110,14 @@
     <Compile Include="Views\Shared\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Shared\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Sidebar.xaml.cs">
+      <DependentUpon>Sidebar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\TopBar.xaml.cs">
       <DependentUpon>TopBar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\CheckInOutPage.xaml.cs">
-      <DependentUpon>CheckInOutPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\CustomerManagementPage.xaml.cs">
-      <DependentUpon>CustomerManagementPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Dashboard.xaml.cs">
-      <DependentUpon>Dashboard.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\RoomManagementPage.xaml.cs">
-      <DependentUpon>RoomManagementPage.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -129,27 +131,39 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Admin\CustomerManagementPage.xaml">
+    <Page Include="Views\Customer\BookingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\Dashboard.xaml">
+    <Page Include="Views\Management\AnalyticsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\EmployeeManagementPage.xaml">
+    <Page Include="Views\Management\CheckInOutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\InventoryManagementPage.xaml">
+    <Page Include="Views\Management\CustomerManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\InvoiceManagementPage.xaml">
+    <Page Include="Views\Management\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\RoomManagementPage.xaml">
+    <Page Include="Views\Management\EmployeeManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Management\InventoryManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Management\InvoiceManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Management\RoomManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,31 +187,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Shared\MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Shared\RegisterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Shared\Sidebar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Shared\TopBar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Staff\CheckInOutPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Staff\CustomerManagementPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Staff\Dashboard.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Staff\RoomManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

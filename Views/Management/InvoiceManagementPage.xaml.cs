@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace StayManager.Views.Admin
+namespace StayManager.Views.Management
 {
     /// <summary>
     /// Interaction logic for InvoiceManagementPage.xaml

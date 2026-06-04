@@ -1,12 +1,19 @@
-﻿<Window x:Class="StayManager.Views.Admin.InventoryManagementPage"
+﻿<Window x:Class="StayManager.Views.Management.InventoryManagementPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:StayManager.Views.Admin"
-        mc:Ignorable="d"
-        Title="InventoryManagementPage" Height="450" Width="800">
+        xmlns:local="clr-namespace:StayManager.Views.Shared"
+        Title="Quản lý vật tư" Height="900" Width="1200">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <local:Sidebar Grid.Column="0"/>
+        <StackPanel Grid.Column="1" Margin="20">
+            <TextBlock Text="Quản lý Vật tư" FontSize="24" FontWeight="Bold" Margin="10"/>
+            <Button Content="Nhập kho" Width="100" Margin="10"/>
+            <ItemsControl x:Name="icInventory"/>
+        </StackPanel>
     </Grid>
 </Window>
